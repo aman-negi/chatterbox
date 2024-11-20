@@ -1,0 +1,33 @@
+{
+    "manifest_version": 2,
+    "name": "Chatterbox",
+    "version": "1.0.1",
+
+    "description": "Listens to your google meet and notifies you if a predefined keyword is spoken",
+
+    "icons": {
+        "48": "icons/deer-48.png",
+        "96": "icons/deer-96.png"
+    },
+
+    "permissions": [
+        "activeTab","http://127.0.0.1:5000"
+    ],
+
+    "browser_action": {
+        "default_icon": "icons/deer-32.png",
+        "default_title": "Chatterbox",
+        "default_popup": "popup/settings.html"
+    },
+
+    "content_scripts": [
+        {
+            "matches": ["*://meet.google.com/*"],
+            "js": ["content_scripts/expecto.js"]
+        }
+    ],
+
+    "web_accessible_resources": [
+        "icons/deer-96.png"
+    ]
+}
